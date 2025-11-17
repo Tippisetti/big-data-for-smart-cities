@@ -1,0 +1,189 @@
+/* --- Dark, clean UI --- */
+body {
+  background: #0b1120;
+  color: #e2e8f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.hero {
+  padding: 2rem 0;
+  text-align: center;
+  background: linear-gradient(90deg, #0f172a, #1e293b);
+  border-bottom: 1px solid #1e293b;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;   /* Safari/Chrome */
+  background-clip: text;           /* Standard (fixes warning) */
+  color: transparent;
+  margin: 0;
+}
+
+.hero p {
+  color: #94a3b8;
+  margin: 0.5rem 0 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: #111827;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  margin: 1.25rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+label {
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+input:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+button.btn {
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  grid-column: 1 / -1;
+  transition: opacity 0.2s;
+}
+
+button.btn:hover {
+  opacity: 0.9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+#advice {
+  margin-top: 0.8rem;
+  font-style: italic;
+  color: #94a3b8;
+}
+
+#map {
+  height: 400px;
+  background: #0f172a;
+  border-radius: 1rem;
+}
+
+#riskChart {
+  height: 300px;
+  margin-top: 1rem;
+}
+
+/* --- Risk Badge --- */
+.risk-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 0.5rem;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.risk-badge.high {
+  animation: pulseHigh 1.2s infinite alternate;
+  background: #f97316;
+}
+
+.risk-badge.extreme {
+  animation: pulseExtreme 0.8s infinite alternate;
+  background: #dc2626;
+}
+
+@keyframes pulseHigh {
+  from {
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
+    transform: scale(1);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.8);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes pulseExtreme {
+  from {
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+    transform: scale(1);
+  }
+  to {
+    box-shadow: 0 0 28px rgba(220, 38, 38, 1);
+    transform: scale(1.12);
+  }
+}
+
+/* --- Pulsing map marker --- */
+.pulse {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.pulse::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0.7;
+  animation: pulse 1.5s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  70%,
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* --- Weather summary --- */
+#weather-summary ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#weather-summary li {
+  padding: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}

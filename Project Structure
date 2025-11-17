@@ -1,0 +1,23 @@
+disaster-early-warning/
+├─ app.py
+├─ requirements.txt
+├─ README.md
+├─ .gitignore
+├─ .devcontainer/
+│ └─ devcontainer.json
+├─ templates/
+│ └─ index.html
+├─ static/
+│ ├─ css/
+│ │ └─ styles.css
+│ └─ js/
+│ └─ app.js
+├─ models/
+│ ├─ train.py
+│ ├─ features.py
+│ └─ model.joblib # generated after training
+└─ data/
+├─ samples/
+│ └─ synthetic_disasters_1990_2024.csv
+├─ raw/ # data
+└─ processed/ # cached, cleaned datasets
